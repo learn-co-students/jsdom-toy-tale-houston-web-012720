@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 12
     },
     {
       "id": 2,
@@ -47,6 +47,24 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "He-Man",
+      "likes": 0,
+      "image": "http://www.mwctoys.com/images1/review_motuc1_1.jpg",
+      "id": 9
+    },
+    {
+      "name": "He-Man",
+      "likes": 0,
+      "image": "http://www.mwctoys.com/images1/review_motuc1_1.jpg",
+      "id": 10
+    },
+    {
+      "name": "",
+      "likes": 0,
+      "image": "",
+      "id": 11
     }
   ]
 }
