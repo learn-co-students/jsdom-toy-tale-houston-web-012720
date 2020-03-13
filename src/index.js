@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const likes_label = document.createElement("p")
     const image = document.createElement("img")
     const like_button = document.createElement("button")
+    const delete_button = document.createElement("button")
 
     // Sets the class name of each element
     div.className = "card"
@@ -31,12 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
     likes_label.className = "likes"
     image.className = "toy-avatar"
     like_button.className = "like-btn"
+    delete_button.className = "delete-btn"
 
     // Sets the needed information to a value
     name_text.innerText = toy.name
     likes_label.innerText = "Likes: " + toy.likes
     image.src = toy.image
     like_button.innerText = "Like"
+    delete_button.innerText = "Delete"
 
     // Adds our elements to the page or to another element
     document.body.append(div)
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     div.append(image)
     div.append(likes_label)
     div.append(like_button)
+    div.append(delete_button)
 
     // Runs when the "Like" button is clicked
     like_button.addEventListener("click", () => {
@@ -58,6 +62,22 @@ document.addEventListener("DOMContentLoaded", () => {
         .then( toy => {
           // Updates the HTML for our element so we dont need to reload the page
           likes_label.innerText = "Likes: " + toy.likes
+        })
+
+    })
+
+    // Deletes a toy from the json-server
+    delete_button.addEventListener("click", () => {
+
+      event.target.parentElement.style.display = "none"
+
+      fetch(`http://localhost:3000/toys/${toy.id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then( res => res.json() )
+        .then( toy => {
+          console.log("Toy Deleted!")
         })
 
     })
